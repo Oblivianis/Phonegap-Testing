@@ -4,10 +4,10 @@
 	id		= "com.phonegap.testing"
 	version 	= "1.0.0">
 
-	<name>PhoneGap:Timesheet</name>
+	<name>SMSer</name>
 
 	<description>
-		Timesheeting Application
+		App for accessing vital SMS services
 	</description>
 
 	<author href="https://github.com/Oblivianis/Phonegap-Testing"
@@ -17,7 +17,6 @@
 
 	<icon src="icon.png" gap:role="default" />
 
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<preference name="orientation" value="portrait" />
