@@ -12,7 +12,7 @@
 <body> 
 <div data-role="page" id="home">
 	<div data-role="content">	
-	<img class="centered" src="images/smsLogo.jpg" /><br />
+	<img class="centered" src="images/darklogo.png" /><br />
 		<form id="login" action="#menu" method="POST">
 			<label for="username">Username:</label>
 			<input name="Username" id="username" value="" type="text"><br />
@@ -26,7 +26,7 @@
 <div data-role="page" id="menu">
 	<div data-role="header">
 			<a id="button-logout" href="#home" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Logout</a>
-			<img class="centered" src="images/smsLogo.jpg" />
+			<img class="centered" src="images/logo.png" />
 	</div>
 	<div data-role="content">
 		<div class="ui-grid-b">
@@ -52,7 +52,7 @@
 <div data-role="page" id="timesheet">
 	<div data-role="header">
 		<a id="button-home" href="#menu" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Home</a>
-		<img class="centered" src="images/smsLogo.jpg" />
+		<img class="centered" src="images/logo.png" />
 	</div>
 	<div data-role="content">	
 		<p class="centered">Manage Timesheets</p>
@@ -61,6 +61,8 @@
             <li><a id="button-daily" href="#daily">Edit Current Week</a></li>
             <li><a id="button-weekly" href="#weekly">Copy from Previous</a></li>
 		</ul>
+		<br />
+		<br />
 		<div id="prevTimesheets">
 			<div class="ui-grid-b">
 				<div class="ui-block-a"><div>Week</div></div>
@@ -78,14 +80,14 @@
 				<div class="ui-block-c"><div class="green">Submitted</div></div>
 			</div>
 			<div class="ui-grid-b">
-				<div class="ui-block-a"><div class="green">2/07/2012</div></div>
-				<div class="ui-block-b"><div class="green">40</div></div>
-				<div class="ui-block-c"><div class="green">Approved</div></div>
+				<div class="ui-block-a"><div>2/07/2012</div></div>
+				<div class="ui-block-b"><div>40</div></div>
+				<div class="ui-block-c"><div>Approved</div></div>
 			</div>
 			<div class="ui-grid-b">
-				<div class="ui-block-a"><div class="green">25/06/2012</div></div>
-				<div class="ui-block-b"><div class="green">40</div></div>
-				<div class="ui-block-c"><div class="green">Approved</div></div>
+				<div class="ui-block-a"><div>25/06/2012</div></div>
+				<div class="ui-block-b"><div>40</div></div>
+				<div class="ui-block-c"><div>Approved</div></div>
 			</div>
 		</div>
 	</div>
@@ -99,36 +101,51 @@
 		<h1 id="todayHeader">Not working</h1>
 	</div>
 	<div data-role="content">
-		<div class="ui-grid-b">
-			<div class="ui-block-a" style="width:70%">
-				<select id="act1" name="Act1">
-					<option value="last" selected="true">Last Logged Job</option>
-					<option value="bench">Bench</option>
-					<option value="leave">Personal Leave</option>
-					<option value="sick">Sick Leave</option>
-				</select>
-			</div>
-			<div class="ui-block-b" style="width:20%">
-				<input name="Hours1" id="hours1" value="4" type="number">
-			</div>
-			<div class="ui-block-c" style="width:10%">
+		<div class="ui-grid-c">
+			<div class="ui-block-a" style="width:10%">
 				<input type="submit" value="Delete" data-icon="delete" data-iconpos="notext"/>
 			</div>
+			<div class="ui-block-b" style="width:50%">
+				<input type="text" name="Task1" id="task1" disabled="true" value="Last Logged Job"  />
+			</div>
+			<div class="ui-block-c" style="width:20%">
+				<select id="bill1" name="Bill1">
+					<option value="billable" selected="true">Billable</option>
+					<option value="valueadd">Value Add</option>
+				</select>
+			</div>
+			<div class="ui-block-d" style="width:20%">
+				<input name="Hours1" id="hours1" value="4" type="number">
+			</div>
 		</div>
-		<div class="ui-grid-b">
-			<div class="ui-block-a"  style="width:70%">
+		<div class="ui-grid-c">
+			<div class="ui-block-a" style="width:10%">
+				<input type="submit" value="Delete" data-icon="delete" data-iconpos="notext"/>
+			</div>
+			<div class="ui-block-b"  style="width:50%">
+				<input type="text" name="Task2" id="task2" disabled="true" value="Bench"  />
+			</div>
+			<div class="ui-block-c" style="width:20%">
+				<select id="bill2" name="Bill2">
+					<option value="billable" selected="true">Billable</option>
+					<option value="valueadd">Value Add</option>
+				</select>
+			</div>
+			<div class="ui-block-d"  style="width:20%">
+				<input name="Hours2" id="hours2" value="4" type="number">
+			</div>
+		</div>
+		<div class="ui-grid-a">
+			<div class="ui-block-a" style="width:10%">
+				<input type="submit" value="Add" data-icon="plus" data-iconpos="notext"/>
+			</div>
+			<div class="ui-block-b"  style="width:90%">
 				<select id="act1" name="Act1">
 					<option value="last">Last Logged Job</option>
 					<option value="bench">Bench</option>
 					<option value="leave">Personal Leave</option>
 					<option value="sick" selected="true">Sick Leave</option>
 				</select>
-			</div>
-			<div class="ui-block-b"  style="width:20%">
-				<input name="Hours2" id="hours2" value="4" type="number">
-			</div>
-			<div class="ui-block-c" style="width:10%">
-				<input type="submit" value="Delete" data-icon="delete" data-iconpos="notext"/>
 			</div>
 		</div>
 		<div data-role="fieldcontain">
