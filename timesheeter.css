@@ -4,15 +4,42 @@ display: block;
 margin-left:auto;
 margin-right:auto;
 }
-p.centered
+.centered
 {
 text-align:center;
 }
-div.green
+.ljustified
+{
+text-align:left;
+}
+.green
 {
 color:green;
 }
-div.red
+.red
 {
 color:red;
+}
+.blue
+{
+color:blue;
+}
+.outlined
+{
+padding:5px;
+outline:#000000 solid thin;
+}
+.heading
+{
+font-weight:bold;
+text-align:center;
+}
+.navigator
+{
+padding:5px;
+border-width: 2px;
+border-top: 2px lightgrey solid;
+border-bottom: 2px lightgrey solid;
+font-weight:bold;
+font-size:90%;
 }

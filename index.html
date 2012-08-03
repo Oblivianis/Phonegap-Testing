@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>Timesheeter</title>
-<link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery.mobile-1.1.1.min.css" rel="stylesheet" type="text/css"/>
 <link href="timesheeter.css" rel="stylesheet" type="text/css"/>
-<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
-<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.1.1.min.js" type="text/javascript"></script>
 <script src="timesheeter.js" type="text/javascript"></script>
 </head> 
 <body> 
@@ -24,11 +24,12 @@
 	</div>
 </div>
 <div data-role="page" id="menu">
-	<div data-role="header">
-			<a id="button-logout" href="#home" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Logout</a>
-			<img class="centered" src="images/newlogo.png" />
-	</div>
 	<div data-role="content">
+		<div class="ui-grid-b">
+				<div class="ui-block-a" style="width:25%"><a id="button-logout" href="#home" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Logout</a></div>
+				<div class="ui-block-b" style="width:50%"><img class="centered" src="images/newlogo.png" /></div>
+				<div class="ui-block-c" style="width:25%"></div>
+		</div>
 		<div class="ui-grid-b">
 			<div class="ui-block-a"><a href="#timesheet"><img class="centered" src="images/timesheet.png"/><p class="centered">Timesheet</p></a></div>
 			<div class="ui-block-b"><a href="#blank"><img class="centered" src="images/other.png"/><p class="centered">Other</p></a></div>
@@ -45,25 +46,21 @@
 			<div class="ui-block-c"><a href="#blank"><img class="centered" src="images/other.png"/><p class="centered">Other</p></a></div>
 		</div>			
 	</div>
-	<div data-role="footer" data-position="fixed">
-		<h4>USERID - Choose a task</h4>
-	</div>
 </div>
 <div data-role="page" id="timesheet">
-	<div data-role="header">
-		<a id="button-home" href="#menu" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Home</a>
-		<img class="centered" src="images/newlogo.png" />
-	</div>
 	<div data-role="content">	
-		<p class="centered">Manage Timesheets</p>
-		<ul data-role="listview">
-        	<li><a id="button-today" href="#today">Add Todays Entry</a></li>
-            <li><a id="button-daily" href="#daily">Edit Current Week</a></li>
-            <li><a id="button-weekly" href="#weekly">Copy from Previous</a></li>
-		</ul>
+		<div class="ui-grid-b">
+			<div class="ui-block-a" style="width:25%"><a id="button-home" href="#menu" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Home</a></div>
+			<div class="ui-block-b" style="width:50%"><img class="centered" src="images/newlogo.png" /></div>
+			<div class="ui-block-c" style="width:25%"></div>
+		</div>
+		<h3 class="centered">Manage Timesheets</h3>
+		<a data-role="button" id="button-today" href="#today">Add Todays Entry</a>
+        <a data-role="button" id="button-daily" href="#daily">Edit Current Week</a>
+        <a data-role="button" id="button-weekly" href="#weekly">Copy from Previous</a>
 		<br />
 		<br />
-		<div id="prevTimesheets">
+		<div class="outlined" id="prevTimesheets">
 			<div class="ui-grid-b">
 				<div class="ui-block-a"><div>Week</div></div>
 				<div class="ui-block-b"><div>Hours</div></div>
@@ -91,132 +88,128 @@
 			</div>
 		</div>
 	</div>
-	<div data-role="footer" data-position="fixed">
-		<h4>Next Timesheet: 16th Jul to 22nd Jul - Pending</h4>
-	</div>
 </div>
 
 <div data-role="page" id="today">
-	<div data-role="header">
-		<h1 id="todayHeader">Not working</h1>
-	</div>
 	<div data-role="content">
-		<div class="ui-grid-c">
-			<div class="ui-block-a" style="width:10%">
-				<input type="submit" value="Delete" data-icon="delete" data-iconpos="notext"/>
-			</div>
-			<div class="ui-block-b" style="width:50%">
-				<input type="text" name="Task1" id="task1" disabled="true" value="Last Logged Job"  />
-			</div>
-			<div class="ui-block-c" style="width:20%">
-				<select id="bill1" name="Bill1">
-					<option value="billable" selected="true">Billable</option>
-					<option value="valueadd">Value Add</option>
-				</select>
-			</div>
-			<div class="ui-block-d" style="width:20%">
-				<input name="Hours1" id="hours1" value="4" type="number">
-			</div>
+		<div class="ui-grid-b">
+			<div class="ui-block-a" style="width:25%"><a id="button-saveday" href="#daily" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Save</a></div>
+			<div class="ui-block-b" style="width:50%"><img class="centered" src="images/newlogo.png" /></div>
+			<div class="ui-block-c" style="width:25%"></div>
 		</div>
-		<div class="ui-grid-c">
-			<div class="ui-block-a" style="width:10%">
-				<input type="submit" value="Delete" data-icon="delete" data-iconpos="notext"/>
-			</div>
-			<div class="ui-block-b"  style="width:50%">
-				<input type="text" name="Task2" id="task2" disabled="true" value="Bench"  />
-			</div>
-			<div class="ui-block-c" style="width:20%">
-				<select id="bill2" name="Bill2">
-					<option value="billable" selected="true">Billable</option>
-					<option value="valueadd">Value Add</option>
-				</select>
-			</div>
-			<div class="ui-block-d"  style="width:20%">
-				<input name="Hours2" id="hours2" value="4" type="number">
+		<a id="button-copyyesterday" data-mini="true" data-role="button">Copy times from yesterday</a>
+		<div class="navigator">
+			<div class="ui-grid-b">
+				<div class="ui-block-a" style="width:15%"><a id="button-yesterday" href="#today" data-direction="reverse" data-iconpos="notext" data-icon="arrow-l" data-role="button"></a></div>
+				<div class="ui-block-b" style="width:70%"><p class="centered" id="todayHeader">Not working - Go back</p></div>
+				<div class="ui-block-c" style="width:15%"><a id="button-yesterday" href="#today" data-iconpos="notext" data-icon="arrow-r" data-role="button"></a></div>
 			</div>
 		</div>
 		<div class="ui-grid-a">
 			<div class="ui-block-a" style="width:10%">
-				<input type="submit" value="Add" data-icon="plus" data-iconpos="notext"/>
+				<input type="submit" value="1" data-icon="delete" data-iconpos="notext"/>
 			</div>
-			<div class="ui-block-b"  style="width:90%">
-				<select id="act1" name="Act1">
-					<option value="last">Last Logged Job</option>
-					<option value="bench">Bench</option>
-					<option value="leave">Personal Leave</option>
-					<option value="sick" selected="true">Sick Leave</option>
-				</select>
+			<div class="ui-block-b" style="width:90%">
+				<a data-role="button" id="act1" class="ljustified" href="#edit" data-mini="true" data-icon="arrow-r" data-iconpos="right"><span class="blue">4</span> - <span class="green">B </span>  - Generic Energy Long Term Rejuvination Project Phase 3</a>
 			</div>
 		</div>
-		<div data-role="fieldcontain">
-			<a data-direction="reverse" href="#home" data-rel="back" data-icon="arrow-l" data-role="button">Back</a>
+		<div class="ui-grid-c">
+			<div class="ui-block-a" style="width:10%">
+				<input type="submit" value="2" data-icon="delete" data-iconpos="notext"/>
+			</div>
+			<div class="ui-block-b" style="width:90%">
+				<a data-role="button" id="act2" class="ljustified" href="#edit" data-mini="true" data-icon="arrow-r" data-iconpos="right"><span class="blue">4</span> - <span class="red">NB</span> - Post Australia</a>
+			</div>
 		</div>
-	</div>
-	<div data-role="footer" data-position="fixed">
-		<h4>Next Timesheet: 16th Jul to 22nd Jul - Pending</h4>
+		<a data-role="button" id="addAct" href="#edit" data-mini="true" data-icon="plus" data-iconpos="top">Add</a>
 	</div>
 </div>
 <div data-role="page" id="daily">
-	<div data-role="header">
-		<h1 id="dailyHeader">Current Weeks Timesheet</h1>
-	</div>
 	<div data-role="content">	
-        <ul data-role="listview">
-				<li><a href="#today" data-icon="arrow-r" data-iconpos="right"><strong>Monday</strong><br />
-					<em>Last Logged Job</em><div style="float:right">4 Hours</div><br />
-					<em>Bench</em><div style="float:right">4 Hours</div></a></li>
-				<li><a href="#today" data-icon="arrow-r" data-iconpos="right"><strong>Tuesday</strong><br />
-					<em>Last Logged Job</em><div style="float:right">8 Hours</div></a></li>
-				<li><a href="#today" data-icon="arrow-r" data-iconpos="right"><strong>Wednesday</strong><br />
-					<em>Last Logged Job</em><div style="float:right">8 Hours</div></a></li>
-				<li><a href="#today" data-icon="arrow-r" data-iconpos="right"><strong>Thursday</strong><br />
-					<em>Last Logged Job</em><div style="float:right">8 Hours</div></a></li>
-				<li><a href="#today" data-icon="arrow-r" data-iconpos="right"><strong>Friday</strong><br />
-					<em>Last Logged Job</em><div style="float:right">8 Hours</div></a></li>
-        </ul>
-		<div data-role="fieldcontain">
-			<a data-direction="reverse" href="#home" data-rel="back" data-icon="arrow-l" data-role="button">Back</a>
+		<div class="ui-grid-b">
+			<div class="ui-block-a" style="width:30%"><a id="button-weekback" href="#timesheet" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Back</a></div>
+			<div class="ui-block-b" style="width:40%"><img class="centered" src="images/newlogo.png" /></div>
+			<div class="ui-block-c" style="width:30%"><a id="button-submit" href="#timesheet" data-mini="true"  data-inline="true" data-icon="arrow-r" data-iconpos="right" data-role="button">Submit</a></div>
 		</div>
-	</div>
-	<div data-role="footer" data-position="fixed">
-		<h4>Next Timesheet: 16th Jul to 22nd Jul - Pending</h4>
+		<div class="ui-grid-b">
+			<div class="ui-block-a" style="width:50%"><a id="button-saveweek" href="#timesheet" data-direction="reverse" data-mini="true" data-icon="arrow-l" data-role="button">Save</a></div>
+			<div class="ui-block-b" style="width:50%"><a id="button-submit" href="#timesheet" data-mini="true" data-icon="arrow-r" data-iconpos="right" data-role="button">Send To</a></div>
+		</div>
+		<p id="dailyHeader" class="heading">Current Weeks Timesheet</p>
+		
+		<div class="ui-grid-c">
+			<div class="ui-block-a" style="width:25%"><a id="editMon" href="#today" data-role="button" data-mini="true"  data-inline="true">8</a><p>Mon</p></div>
+			<div class="ui-block-b" style="width:25%"><a id="editTues" href="#today" data-role="button" data-mini="true"  data-inline="true">7.5</a><p>Tues</p></div>
+			<div class="ui-block-c" style="width:25%"><a id="editWed" href="#today" data-role="button" data-mini="true"  data-inline="true">8</a><p>Wed</p></div>
+			<div class="ui-block-d" style="width:25%"><a id="editThurs" href="#today" data-role="button" data-mini="true"  data-inline="true">8</a><p>Thurs</p></div>
+		</div>
+		<div class="ui-grid-c">
+			<div class="ui-block-a" style="width:25%"><a id="editFri" href="#today" data-role="button" data-mini="true"  data-inline="true">8</a><p>Fri</p></div>
+			<div class="ui-block-b" style="width:25%"><a id="editSat" href="#today" data-role="button" data-mini="true"  data-inline="true">0</a><p>Sat</p></div>
+			<div class="ui-block-c" style="width:25%"><a id="editSun" href="#today" data-role="button" data-mini="true"  data-inline="true">0</a><p>Sun</p></div>
+			<div class="ui-block-d" style="width:25%"></div>
+		</div>
+		<div class="navigator">
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="width:75%"><p>Project A</p></div>
+				<div class="ui-block-b" style="width:25%"><p>35 Hours</p></div>
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="width:75%"><p>Project B</p></div>
+				<div class="ui-block-b" style="width:25%"><p>5 Hours</p></div>
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="width:75%"><p>Total</p></div>
+				<div class="ui-block-b" style="width:25%;color:green"><p>40 Hours</p></div>
+			</div>
+		</div>
 	</div>
 </div>
 
 <div data-role="page" id="weekly">
-	<div data-role="header">
-		<h1 id="weeklyHeader">Current Weekly Timesheet</h1>
-	</div>
     <div data-role="content">
+		<div class="ui-grid-b">
+			<div class="ui-block-a" style="width:30%"><a id="button-weekback" href="#timesheet" data-direction="reverse" data-mini="true"  data-inline="true" data-icon="arrow-l" data-role="button">Back</a></div>
+			<div class="ui-block-b" style="width:40%"><img class="centered" src="images/newlogo.png" /></div>
+			<div class="ui-block-c" style="width:30%"></div>
+		</div>
+		<p id="editHeader" class="heading">What did you do this week?</p>
         <ul data-role="listview">
             <li><a href="#daily" data-icon="arrow-r" data-iconpos="right" id="weekly-last" />Last Logged Job</a></li>
             <li><a href="#daily" data-icon="arrow-r" data-iconpos="right" id="weekly-bench" />Bench</a></li>
             <li><a href="#daily" data-icon="arrow-r" data-iconpos="right" id="weekly-holiday" />Holiday</a></li>
             <li><a href="#daily" data-icon="arrow-r" data-iconpos="right" id="weekly-sick" />Sick</a></li>
         </ul>
-		<div data-role="fieldcontain">
-			<a data-direction="reverse" href="#home" data-rel="back" data-icon="arrow-l" data-role="button">Back</a>
-		</div>
     </div>
-	<div data-role="footer" data-position="fixed">
-		<h4>Next Timesheet: 16th Jul to 22nd Jul - Pending</h4>
-	</div>
 </div>
 
-<div data-role="page" id="prev">
-	<div data-role="header">
-		<h1>Page Four</h1>
-	</div>
+<div data-role="page" id="edit">
 	<div data-role="content">	
-		Content	
-		<div data-role="fieldcontain">
-			<a data-direction="reverse" href="#home" data-rel="back" data-icon="arrow-l" data-role="button">Back</a>
-		</div>		
-	</div>
-	<div data-role="footer" data-position="fixed">
-		<h4>Next Timesheet: 16th Jul to 22nd Jul - Pending</h4>
+		<div class="ui-grid-b">
+			<div class="ui-block-a" style="width:30%"><a id="button-weekback" href="#today" data-direction="reverse" data-mini="true" data-inline="true" data-icon="arrow-l" data-role="button">Cancel</a></div>
+			<div class="ui-block-b" style="width:40%"><img class="centered" src="images/newlogo.png" /></div>
+			<div class="ui-block-c" style="width:30%"></div>
+		</div>
+		<p id="editHeader" class="heading">Edit Activity</p>
+		<select id="editAct" name="Activity">
+			<option value="last">Last Logged Job</option>
+			<option value="bench">Bench</option>
+			<option value="leave">Personal Leave</option>
+			<option value="sick" >Sick Leave</option>
+		</select>
+		<div class="ui-grid-b">
+			<div class="ui-block-a" style="width:50%">
+				<select id="editBill" name="Bill">
+					<option value="billable" selected="true">Billable</option>
+					<option value="valueadd">Value Add</option>
+				</select>
+			</div>
+			<div class="ui-block-b" style="width:50%">
+				<input id="editHours" name="Hours" type="number"></input>
+			</div>
+		</div>
+		<a id="button-saveedit" href="#today" data-mini="true" data-iconpos="right" data-icon="check" data-role="button">Save</a>
 	</div>
 </div>
-
 </body>
 </html>
